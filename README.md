@@ -1,6 +1,6 @@
 # Ystia Orchestrator guides
 
-This repository provides guidance on how to install, use and troubleshoot the Ystia Orchestrator (Yorc).
+This repository provides guidance on how to install, use and troubleshoot the Ystia Orchestrator (Yorc) version `3.0.1`.
 
 ## Overview
 
@@ -24,3 +24,4 @@ This repository provides guidance on how to install, use and troubleshoot the Ys
 
 ### Troubleshooting
 
+  * [Troubleshooting an application deployment failure](docs/troubleshooting/troubleshoot-deployment.md)

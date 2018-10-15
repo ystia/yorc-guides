@@ -84,4 +84,4 @@ deployed Web Server is up and running showing a Welcome message.
 
 <img src="../images/a4cApplicationInfo.png">
 
-Next step is about troubleshooting an application deployment.
+Next step is about [troubleshooting an application deployment failure](../troubleshooting/troubleshoot-deployment.md)
