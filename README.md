@@ -1,8 +1,5 @@
 # Ystia Orchestrator guides
 
-
-<img src="docs/images/yorcicon.png">
-
 This repository provides guidance on how to install, use and troubleshoot the Ystia Orchestrator (Yorc).
 
 ## Overview
@@ -23,6 +20,6 @@ This repository provides guidance on how to install, use and troubleshoot the Ys
 ### Applications deployment
 
   * [Upload Components/Application templates](docs/applications/upload_from_forge.md) from Ystia Forge
-  * Deploy an application
+  * Create and deploy an application
 
 ### Troubleshooting

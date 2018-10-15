@@ -11,9 +11,9 @@ For example, it provides :
      allowing you to create a Kubernetes cluster in your datacenter.
   * etc...
 
-See the list of avaiable components and applications template at https://github.com/ystia/forge/tree/develop/org/ystia.
+See the list of avaiable components and applications template at https://github.com/ystia/forge/tree/v2.0.0/org/ystia.
 
-Here, we will upload a sample application template, [Welcome](https://github.com/ystia/forge/tree/develop/org/ystia/samples/topologies/welcome_basic),
+Here, we will upload a sample application template, [Welcome](https://github.com/ystia/forge/tree/v2.0.0/org/ystia/samples/topologies/welcome_basic),
 deploying an HTTP server.
 
 To upload this application template in Alien4Cloud, you could generate zip archives
@@ -33,10 +33,10 @@ common components and the Welcome component referenced in the application templa
   * https://github.com/ystia/forge/tree/v2.0.0/org/ystia/samples/welcome
   * https://github.com/ystia/forge/tree/v2.0.0/org/ystia/samples/topologies/welcome_basic
 
-You need to provide the repository URL: https://github.com/ystia/yorc-a4c-plugin.git.
+You need to provide the repository URL: https://github.com/ystia/forge.git.
 And for each directory you want to deploy, you need to specify :
   * the `Branch or Tag`: here you need to specify tag `v2.0.0` as this is the version
-  compatible with Yorc 3.0.1
+  of the Forge compatible with Yorc 3.0.1
   * the path to the directory to import.
 Then click on `+` to add this tag/directory to the list of directories to import.
 
@@ -44,6 +44,21 @@ It gives finally :
 
 <img src="../images/a4cGitLocation.png">
 
-Click on `Save`. Then from this page, click on `Import` to import components and the application template :
+Click on `Save`. Then from this page, click on the operation  `Import` to import
+components and the application template:
+
+<img src="../images/a4cGitImport.png">
+
+Once done, you get this page providing the import result:
+
+<img src="../images/a4cGitImportResult.png">
+
+You can click select in the menu `Browse components` or `Browse topologies` to see
+the components/application templates imported in the Alien4Cloud catalog:
+
+<img src="../images/a4cCatalogBrowseTopo.png">
+
+Now that the Welcome application template is uploaded, the next step is to create
+and deploy an application from this template.
 
 
