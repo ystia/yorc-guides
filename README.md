@@ -9,7 +9,7 @@ This repository provides guidance on how to install, use and troubleshoot the Ys
 ### Install the Ochestrator
 
   * [Install Yorc the easy way (docker)](docs/install/install_yorc_docker.md)
-  * Install Yorc the hard way
+  * [Install Yorc manually](docs/install/install_yorc_manually.md)
 
 ### Install and configure the Orchestrator UI companion - Alien4Cloud
 
