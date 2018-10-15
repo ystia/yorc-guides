@@ -35,7 +35,7 @@ supported types of insfrastructures as described in the following sections.
 
   * [Install Alien4Cloud](docs/install/install_a4c.md)
   * [Configure Alien4Cloud to use Yorc](docs/install/configure_a4c_yorc.md)
-  * [Configure deployment locations](docs/install/configure_a4c_yorc_locations.md): Google Cloud, OpenStack, AWS, Slurm, Hosts Pools
+  * [Configure deployment locations](docs/install/configure_a4c_yorc_locations.md)
 
 ### Applications deployment
 
