@@ -1,6 +1,6 @@
 # Ystia Orchestrator guides
 
-This repository provides guidance on how to install, use and troubleshoot the Ystia Orchestrator (Yorc) version `3.0.1`.
+This repository provides guidance on how to install, use and troubleshoot the Ystia Orchestrator (Yorc) latest release 3.0.1.
 
 ## Overview
 
@@ -22,8 +22,7 @@ A [plugin](https://github.com/ystia/yorc-a4c-plugin/tree/v3.0.1) is provided so 
 
 To get started, you can start running a Yorc docker container, install Alien4Cloud,
 upload sample application from the Forge and deploy this application on one of the 
-supported types of insfrastructures as described in the follwing sections.
-
+supported types of insfrastructures as described in the following sections.
 
 ## Installation/configuration
 
