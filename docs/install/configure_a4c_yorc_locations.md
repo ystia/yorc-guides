@@ -156,6 +156,6 @@ so that different deployments could use this same resource.
 Credentials don’t have to be defined here. For hosts in a Hosts Pool, credentials
 are defined in the Yorc server configuration as described in the [installation section](../install/install_yorc_docker.md).
 
-Next step is to [upload Components/Application templates](docs/applications/upload_from_forge.md)
+Next step is to [upload Components/Application templates](../applications/upload_from_forge.md)
 from the Ystia Forge.
 
