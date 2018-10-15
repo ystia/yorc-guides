@@ -69,18 +69,22 @@ values for our new Compute Resource :
 
 <img src="../images/a4cGoogleComputNewResource.png">
 
-Here we have specified to create a `centos-7` compute instance of type `n1-standard-1`,
+Here we will specify to create a `centos-7` compute instance of type `n1-standard-1`,
 which from [Google Cloud documentation](https://cloud.google.com/compute/docs/machine-types) 
-is a machine of 1vCPU and 3.75 GB.
+is a machine of 1vCPU and 3.75 GB, by setting these properties:
+  * `image_project`: centos-cloud
+  * `image_family`: centos-7
+  * `machine_type`: n1-standard-1
+  * `zone`: europe-west1-b
 
-The metadata property allows to define a user and its public key content that will 
+The `metadata` property allows to define a user and its public key content that will 
 be configured on the newly created instance.
 The expected format for this is :
 ```
 ssh-keys=<user to create>:<content of the public key>
 ```
-So above we have specified to create a user called `yorcuser` on the instance to
-create, and we have provided the content of file `/etc/yorc/yorckey.pub` created
+So we will specify to create a user called `yorcuser` on the instance to
+create, and we will provide the content of file `/etc/yorc/yorckey.pub` created
 above.
 
 Below in the page, you need also to configure credentials. This is a mandatory input

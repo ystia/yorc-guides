@@ -20,6 +20,7 @@ This repository provides guidance on how to install, use and troubleshoot the Ys
 ### Applications deployment
 
   * [Upload Components/Application templates](docs/applications/upload_from_forge.md) from Ystia Forge
-  * Create and deploy an application
+  * [Create and deploy an application](docs/applications/create_deploy.md)
 
 ### Troubleshooting
+

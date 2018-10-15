@@ -58,7 +58,7 @@ the components/application templates imported in the Alien4Cloud catalog:
 
 <img src="../images/a4cCatalogBrowseTopo.png">
 
-Now that the Welcome application template is uploaded, the next step is to create
-and deploy an application from this template.
+Now that the Welcome application template is uploaded, the next step is to
+[create and deploy an application](create_deploy.md) from this template.
 
 
