@@ -11,7 +11,8 @@ The Ystia Orchestrator provides applications lifecycle management over hybrid in
 
 Applications and Components are written in [TOSCA](http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.2/TOSCA-Simple-Profile-YAML-v1.2.html)
 (Topology and Orchestration Specification for Cloud Applications), an OASIS consortium
-standard language  to describe a topology of cloud based web services, their components and relationships.
+standard language  to describe a topology of cloud based web services, their
+components and relationships, portable across infrastructures.
 
 The Orchestrator has companions products :
 - the [Ystia Forge](https://github.com/ystia/forge/tree/v2.0.0/org/ystia), repository of components and application templates 
