@@ -81,7 +81,7 @@ ansible:
     unsandboxed_operations_allowed: true
 ```
 
-All properties defined aboce are described in the  [Yorc Server configuration](https://yorc.readthedocs.io/en/v3.0.1/configuration.html) documentation.
+All properties defined above are described in the  [Yorc Server configuration](https://yorc.readthedocs.io/en/v3.0.1/configuration.html) documentation.
 
 Note that Infrastructure parameters above are provided in plain text, but it is possible
 to keep them secret by storing them in a vault.
