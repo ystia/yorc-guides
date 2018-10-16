@@ -58,7 +58,6 @@ infrastructures:
     region: us-east-2
     access_key: ABCDEFABCEDFABCEDFAB
     secret_key: lkipwrbmh+NDcoIVPChYgOcC/a8FfXPwhGZNOGWT
-    secret_key: abcdefABcdefAbcdefABCEDF/abcdefABcdefAbc
   # Kubernetes Infrastructure settings
   kubernetes:
     ca_file: /etc/yorc/kubernetes/ca.pem,
