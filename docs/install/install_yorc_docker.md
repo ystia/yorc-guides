@@ -53,7 +53,7 @@ infrastructures:
     region: RegionOne
     private_network_name: private-net
     default_security_groups: [secgroup1,secgroup2]
-  # AWS Infrastrucute
+  # AWS Infrastructure
   aws:
     region: us-east-2
     access_key: ABCDEFABCEDFABCEDFAB
@@ -156,15 +156,19 @@ The port 8800 used by Yorc by default needs also to be exported.
 It gives this command to start Yorc:
 ```bash
 $ docker run -d \
-	 --mount "type=bind,src=/home/cloud-user/yorc,dst=/etc/yorc" \
-   -p 8800:8800 --rm --name yorc --hostname yorc ystia/yorc:3.0.1
+  --mount "type=bind,src=/home/cloud-user/yorc,dst=/etc/yorc" \
+  -p 8800:8800 --rm --name yorc --hostname yorc ystia/yorc:3.0.1
 ```
 
 You can then see and follow Yorc server logs running this command:
+```bash
 $ docker logs --follow yorc
+```
 
 You can enter the container running :
+```bash
 $ docker exec -it yorc bash
+```
 
 Then start using yorc CLI :
 ```bash
@@ -194,5 +198,5 @@ See more details in the documentation on [Running Yorc in a docker container](ht
 
 Yorc is now installed.
 
-You can skip next section on installing Yorc manually, and go to the section on 
-how to [install the UI companion of Yorc, Alien4Cloud](install_a4c.md).
+You can skip next section on [installing Yorc manually](install_yorc_manually.md),
+and go to the section on how to [install the UI companion of Yorc, Alien4Cloud](install_a4c.md).
