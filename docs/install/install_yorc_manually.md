@@ -9,10 +9,10 @@ See a detailed description of these installations at https://yorc.readthedocs.io
 
 You will have then to configure the Yorc server, through environment variables,
 command-line flags, or a configuration file just like what was described in 
-section [Install Yorc the easy way (docker)](docs/install/install_yorc_docker.md).
+section [Install Yorc the easy way (docker)](install_yorc_docker.md).
 
 Each configuration parameter is described at https://yorc.readthedocs.io/en/v3.0.1/configuration.html
 
 You could then just start a Consul agent then Yorc as described at https://yorc.readthedocs.io/en/v3.0.1/run.html
 
-Or if you plan to install Yorc in High Availability mode, follwing this guide : https://yorc.readthedocs.io/en/v3.0.1/ha.html
+Or if you plan to install Yorc in High Availability mode, follow this guide : https://yorc.readthedocs.io/en/v3.0.1/ha.html
