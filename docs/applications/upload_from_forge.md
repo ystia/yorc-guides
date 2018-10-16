@@ -11,7 +11,7 @@ For example, it provides :
      allowing you to create a Kubernetes cluster in your datacenter.
   * etc...
 
-See the list of avaiable components and applications template at https://github.com/ystia/forge/tree/v2.0.0/org/ystia.
+See the list of available components and application templates at https://github.com/ystia/forge/tree/v2.0.0/org/ystia.
 
 Here, we will upload a sample application template, [Welcome](https://github.com/ystia/forge/tree/v2.0.0/org/ystia/samples/topologies/welcome_basic),
 deploying an HTTP server.

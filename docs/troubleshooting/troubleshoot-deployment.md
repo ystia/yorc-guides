@@ -19,7 +19,7 @@ adding in the Topology an abstract compute node, and within this compute node an
 
 Then, deploy the application.
 
-If you have the premimum version of Alie4Cloud, you can access Yorc deployment logs from the UI :
+If you have the premimum version of Alien4Cloud, you can access Yorc deployment logs from the UI :
 
 <img src="../images/a4cTroubleshootApplicationLogs.png">
 
@@ -39,7 +39,7 @@ Deployments:
 
 To get more details and now which step failed :
 ```bash
-yorc deployments info Troubleshooting-Environment
+$ yorc deployments info Troubleshooting-Environment
 Deployment:  Troubleshooting-Environment
 Global status: DEPLOYMENT_FAILED
 
@@ -138,7 +138,7 @@ to `1` or `DEBUG` before launching Yorc.
 To get ansible debug logs and keep temporary artifacts on the provisioned Compute
 Node at the end of deployment, set the properties `debug` and `keep_operation_remote_path` 
 to `true` in your Yorc configuration in the ansible section, as it was done in the
-configuration example provided in section [Install Yorc the easy way (docker)](docs/install/install_yorc_docker.md) :
+configuration example provided in section [Install Yorc the easy way (docker)](../install/install_yorc_docker.md) :
 ```yaml
 ansible:
   debug: true

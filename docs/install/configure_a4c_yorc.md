@@ -14,7 +14,7 @@ Once donce you can see at the end of this page a new plugin :
 
 <img src="../images/a4cPluginUploaded.png">
 
-To create a new orchestraator, select now menus `Administration` > `Orchestrators` to get this page :
+To create a new orchestrator, select now menus `Administration` > `Orchestrators` to get this page :
 
 <img src="../images/a4cNewOrchestrator.png">
 
