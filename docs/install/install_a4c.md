@@ -7,10 +7,11 @@ Yorc provides a plugin so that Alien4Cloud can interact with the orchestrator.
 First you need to install Alien4Cloud. Yorc 3.0.1 requires Alien4Cloud 2.0.0.
 You can either install manually Alien4Cloud dependencies python, curl, java 8 as described
 in [ALien4Cloud 2.0.0 Getting Started guide](https://alien4cloud.github.io/#/documentation/2.0.0/getting_started/new_getting_started.html),
-or use the docker image alien4cloud/alien4cloud:2.0.0 avaliable on [Docker Hub](https://hub.docker.com/r/alien4cloud/alien4cloud/).
+or use the docker image `alien4cloud/alien4cloud:2.0.0` available on [Docker Hub](https://hub.docker.com/r/alien4cloud/alien4cloud/).
 
 The open source distribution of Alien4Cloud 2.0.0 can be downloaded at :
 https://fastconnect.org/maven/service/local/repositories/opensource/content/alien4cloud/alien4cloud-dist/2.0.0/alien4cloud-dist-2.0.0-dist.tar.gz
+
 There is also a premium edition (see https://alien4cloud.github.io/common/download.html) 
 with interesting additional features, like the ability to see applications deployment
 logs from the underlying orchestrator.
