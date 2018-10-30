@@ -4,7 +4,7 @@ To configure Alien4Cloud to use Yorc, you need to:
   * upload the Yorc Alien4Cloud plugin in Alien4Cloud,
   * create, configure, enable the orchestrator in Alien4Cloud.
 
-First dowload the Yorc Alien4Cloud plugin 3.0.1 from its github repository at https://github.com/ystia/yorc-a4c-plugin/releases/download/v3.0.1/alien4cloud-yorc-plugin-3.0.1.zip
+First dowload the Yorc Alien4Cloud plugin 3.0.2 from its github repository at https://github.com/ystia/yorc-a4c-plugin/releases/download/v3.0.2/alien4cloud-yorc-plugin-3.0.2.zip
 
 Then upload it from Alien4Cloud UI, from menus `Administration` > `Plugins` :
 

@@ -4,7 +4,7 @@ Alien4Cloud is the Orchestrator UI companion.
 It provides a catalog of components and application templates and can rely on Yorc to deploy these application templates.
 Yorc provides a plugin so that Alien4Cloud can interact with the orchestrator.
 
-First you need to install Alien4Cloud. Yorc 3.0.1 requires Alien4Cloud 2.0.0.
+First you need to install Alien4Cloud. Yorc 3.0.2 requires Alien4Cloud 2.0.0.
 You can either install manually Alien4Cloud dependencies, curl and java 8, as described
 in [ALien4Cloud 2.0.0 Getting Started guide](https://alien4cloud.github.io/#/documentation/2.0.0/getting_started/new_getting_started.html),
 or use the docker image `alien4cloud/alien4cloud:2.0.0` available on [Docker Hub](https://hub.docker.com/r/alien4cloud/alien4cloud/).

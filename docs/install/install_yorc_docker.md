@@ -150,13 +150,13 @@ container can be started. This container expects to read its configuration from 
 file under `/etc/yorc` within the container (or from environment variables or CLI flags as exeplained above).
 
 So we will mount the host directory `$HOME/yorc` as `/etc/yorc` on the container.
-And use the image of Yorc 3.0.1 stored on docker hub at https://hub.docker.com/r/ystia/yorc/.
+And use the image of Yorc 3.0.2 stored on docker hub at https://hub.docker.com/r/ystia/yorc/.
 The port 8800 used by Yorc by default needs also to be exported.
 It gives this command to start Yorc:
 ```bash
 $ docker run -d \
   --mount "type=bind,src=/home/cloud-user/yorc,dst=/etc/yorc" \
-  -p 8800:8800 --rm --name yorc --hostname yorc ystia/yorc:3.0.1
+  -p 8800:8800 --rm --name yorc --hostname yorc ystia/yorc:3.0.2
 ```
 
 You can then see and follow Yorc server logs running this command:

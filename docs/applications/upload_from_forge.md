@@ -36,7 +36,7 @@ common components and the Welcome component referenced in the application templa
 You need to provide the repository URL: https://github.com/ystia/forge.git.
 And for each directory you want to deploy, you need to specify :
   * the `Branch or Tag`: here you need to specify tag `v2.0.0` as this is the version
-  of the Forge compatible with Yorc 3.0.1
+  of the Forge compatible with Yorc 3.0.2
   * the path to the directory to import.
 Then click on `+` to add this tag/directory to the list of directories to import.
 
