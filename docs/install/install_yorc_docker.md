@@ -76,6 +76,7 @@ ansible:
   debug: true
   use_openssh: true
   keep_operation_remote_path: true
+  keep_generated_recipes: true
   hosted_operations:
     unsandboxed_operations_allowed: true
 ```
