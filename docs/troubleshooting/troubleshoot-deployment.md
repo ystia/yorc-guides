@@ -142,7 +142,7 @@ You can then go to this directory and re-run this playbook as the yorc user :
 $ ansible-playbook -i hosts run.ansible.yml -v
 ```
 
-If you need more details, debug parmaters can also be specified in the configuration.
+If you need more details, debug parameters can also be specified in the configuration.
 
 To get debug logs from the Orchestrator itself, set the environment variable `YORC_LOG`
 to `1` or `DEBUG` before launching Yorc.
