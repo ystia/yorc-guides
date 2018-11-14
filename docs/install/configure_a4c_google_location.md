@@ -169,11 +169,11 @@ For private network creation, You can specify subnets in three different ways:
 
   You can as well use the auto-create mode and adding default and/or custom subnets as long as there is no CIDR range overlaps.
 
-  Click on the ``custom_subnetworks`` edit icon to create several custom subnets:
+  Click on the `custom_subnetworks` edit icon to create several custom subnets:
 
   <img src="../images/a4cGooglePrivateNetworkSubnet.png">
 
-  Set the mandatory parameters `name``, ``ip_cidr_range` and `region` respectively to define the name of your custom subnet, its IP CIDR range and the Google region it owns. Note that subnet names must be unique in the Google project they owns.
+  Set the mandatory parameters `name`, `ip_cidr_range` and `region` respectively to define the name of your custom subnet, its IP CIDR range and the Google region it owns. Note that subnet names must be unique in the Google project they owns.
 
 You can configure secondary IP ranges for VM instances contained in this sub-network with `secondary_ip_ranges` list.
 
@@ -187,7 +187,7 @@ Here are some answers to frequently asked questions...
 
 - `How-to connect a VM to a private subnet after creating the relationship between the VM and a PrivateNetwork ?`
 
-  * Explicitly by setting the subnet property of the Google network relationship ``yorc.relationships.google.Network`` with the required subnet name.
+  * Explicitly by setting the subnet property of the Google network relationship `yorc.relationships.google.Network` with the required subnet name.
   * Implicitly with the default subnet if exists and in the same region than the VM or otherwise with the first matching subnet in the same region than the VM.
 
 - `Are any firewall rules created for my private network ?`
