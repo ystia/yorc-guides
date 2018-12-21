@@ -4,16 +4,16 @@ The Ystia Forge at https://github.com/ystia/forge provides components and applic
 templates that can be uploaded in Alien4Cloud, to be deployed by Yorc.
 
 For example, it provides :
-  * [Cloudera](https://github.com/ystia/forge/tree/v2.0.0/org/ystia/cloudera),
-  * [Log analysis applications based on Elatic Search](https://github.com/ystia/forge/tree/v2.0.0/org/ystia#topologies-for-log-analysis-based-on-elastic-stack)
-  * [Kafka](https://github.com/ystia/forge/tree/v2.0.0/org/ystia/kafka)
-  * [Kubernetes](https://github.com/ystia/forge/tree/v2.0.0/org/ystia/kubernetes)
+  * [Cloudera](https://github.com/ystia/forge/tree/v2.1.0/org/ystia/cloudera),
+  * [Log analysis applications based on Elatic Search](https://github.com/ystia/forge/tree/v2.1.0/org/ystia#topologies-for-log-analysis-based-on-elastic-stack)
+  * [Kafka](https://github.com/ystia/forge/tree/v2.1.0/org/ystia/kafka)
+  * [Kubernetes](https://github.com/ystia/forge/tree/v2.1.0/org/ystia/kubernetes)
      allowing you to create a Kubernetes cluster in your datacenter.
   * etc...
 
-See the list of available components and application templates at https://github.com/ystia/forge/tree/v2.0.0/org/ystia.
+See the list of available components and application templates at https://github.com/ystia/forge/tree/v2.1.0/org/ystia.
 
-Here, we will upload a sample application template, [Welcome](https://github.com/ystia/forge/tree/v2.0.0/org/ystia/samples/topologies/welcome_basic),
+Here, we will upload a sample application template, [Welcome](https://github.com/ystia/forge/tree/v2.1.0/org/ystia/samples/topologies/welcome_basic),
 deploying an HTTP server.
 
 To upload this application template in Alien4Cloud, you could generate zip archives
@@ -29,14 +29,14 @@ This page appears :
 Click on `Git location`, a popup appears where you need to provide the following
 inputs to import the Welcome sample application template at as well as its dependencies,
 common components and the Welcome component referenced in the application template:
-  * https://github.com/ystia/forge/tree/v2.0.0/org/ystia/common
-  * https://github.com/ystia/forge/tree/v2.0.0/org/ystia/samples/welcome
-  * https://github.com/ystia/forge/tree/v2.0.0/org/ystia/samples/topologies/welcome_basic
+  * https://github.com/ystia/forge/tree/v2.1.0/org/ystia/common
+  * https://github.com/ystia/forge/tree/v2.1.0/org/ystia/samples/welcome
+  * https://github.com/ystia/forge/tree/v2.1.0/org/ystia/samples/topologies/welcome_basic
 
 You need to provide the repository URL: https://github.com/ystia/forge.git.
 And for each directory you want to deploy, you need to specify :
-  * the `Branch or Tag`: here you need to specify tag `v2.0.0` as this is the version
-  of the Forge compatible with Yorc 3.0.2
+  * the `Branch or Tag`: here you need to specify tag `v2.1.0` as this is the version
+  of the Forge compatible with Yorc 3.1.0
   * the path to the directory to import.
 Then click on `+` to add this tag/directory to the list of directories to import.
 

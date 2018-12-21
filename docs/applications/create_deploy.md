@@ -29,7 +29,7 @@ of on-demand resources once you will have selected the location where to deploy
 the application.
 
 But here we defined a Hosts Pool location and a Google Cloud location, which in
-Yorc 3.0.2 just support Compute Nodes on-demand resources, not IP addresses or
+Yorc 3.1.0 just support Compute Nodes on-demand resources, not IP addresses or
 networks. So we will remove this Network component by clicking on `Edit`, 
 selecting the Network Component and clicking on the trash can icon on the upper 
 right hand side :
