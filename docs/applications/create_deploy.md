@@ -24,14 +24,14 @@ deployment, an IP address will be generated on-demand for the Compute Node on th
 network.
 
 You see a green `a` on these components `Network` and `Compute` as these are abstract
-nodes with no implementation, that will be replaced by concrete implementations 
+nodes with no implementation, that will be replaced by concrete implementations
 of on-demand resources once you will have selected the location where to deploy
 the application.
 
 But here we defined a Hosts Pool location and a Google Cloud location, which in
 Yorc 3.1.1 just support Compute Nodes on-demand resources, not IP addresses or
-networks. So we will remove this Network component by clicking on `Edit`, 
-selecting the Network Component and clicking on the trash can icon on the upper 
+networks. So we will remove this Network component by clicking on `Edit`,
+selecting the Network Component and clicking on the trash can icon on the upper
 right hand side :
 
 <img src="../images/a4cApplicationTopologyEdit.png">
@@ -41,7 +41,7 @@ to next step `Locations`, and select the `Google` location:
 
 <img src="../images/a4cApplicationLocation.png">
 
-Click on `Matching`, then `Nodes matching` and check that the abstrat Compute Node
+Click on `Matching`, then `Nodes matching` and check that the abstract Compute Node
 that was defined in our topology, was matched against a `Small compute` on-demand
 resource of type `yorc.nodes.google.Compute` :
 
@@ -51,10 +51,10 @@ If we had specified in the abstract Compute Node in the topology that 2 CPUs are
 requested, then it is the `Large compute` on-demand resource that would have been
 selected.
 
-You can also from this screen select `Small compute` and update this on-demand 
+You can also from this screen select `Small compute` and update this on-demand
 resource properties.
 
-We will do it here to add a value to the propery `tag`, setting a tag `welcome`:
+We will do it here to add a value to the property `tag`, setting a tag `welcome`:
 
 <img src="../images/a4cApplicationNodesMatchingTag.png">
 
@@ -65,8 +65,9 @@ with a given tag expose a given port.
 
 For example this Google Cloud CLI rule expose ports 8111 on all Compute instances
 having the tag welcome :
+
 ```bash
-$ gcloud compute firewall-rules create welcome-demo \
+gcloud compute firewall-rules create welcome-demo \
          --allow tcp:8111 \
          --target-tags welcome
 ```

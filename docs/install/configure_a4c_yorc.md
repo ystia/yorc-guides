@@ -11,7 +11,7 @@ Then upload it from Alien4Cloud UI, from menus `Administration` > `Plugins` :
 
 <img src="../images/a4cUploadPlugin.png">
 
-Once donce you can see at the end of this page a new plugin :
+Once done you can see at the end of this page a new plugin :
 
 <img src="../images/a4cPluginUploaded.png">
 
@@ -28,7 +28,7 @@ Click on `Create`, a new Orchestrator is created :
 <img src="../images/a4cOrchestratorCreated.png">
 
 Select this orchestrator, a page appears showing the Orchestrator is in state `Disabled` for now.
-Select menu `Configuration` on the left hand side, a page appears where you can 
+Select menu `Configuration` on the left hand side, a page appears where you can
 provide the URL to connect to your Yorc Server :
 
 <img src="../images/a4cYorcConfigure.png">
@@ -47,4 +47,3 @@ Alien4Cloud is now configured to use your Yorc Server.
 
 The next step is to [configure deployment locations](configure_a4c_yorc_locations.md):
 Google Cloud, OpenStack, AWS, Slurm, Hosts Pools.
-

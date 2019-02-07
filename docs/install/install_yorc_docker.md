@@ -4,38 +4,44 @@
 
 Install docker following the [Docker installation guide](https://docs.docker.com/install/).
 
-If your setup is behind proxies, you will need to define proxies if you want to 
+If your setup is behind proxies, you will need to define proxies if you want to
 upload upload images from external repositories.
 
-For example on CentOS, you could create a file '/etc/systemd/system/docker.service.d/http-proxy.conf'
+For example on CentOS, you could create a file `/etc/systemd/system/docker.service.d/http-proxy.conf`
 with this content :
-```
+
+```systemd
 [Service]
 Environment="HTTP_PROXY=http://10.1.2.3:8080" "NO_PROXY=10.1.2.4,docker-registry.somecorporation.com"
 ```
-Then flush chnages and restart docker:
+
+Then flush changes and restart docker:
+
 ```bash
-$ systemctl daemon-reload
-$ systemctl restart docker
+systemctl daemon-reload
+systemctl restart docker
 ```
 
 ## Yorc configuration
 
 Before running a Yorc docker container, you will have to define its configuration.
 It can be done through different ways, that you can combine:
-  * command line flags
-  * environment variables
-  * a configuration file
+
+* command line flags
+* environment variables
+* a configuration file
+
 Command line flags take precedence over environment variables, which take precedence
 over values defined in the configuration file.
 
-See [Yorc Server configuration](https://yorc.readthedocs.io/en/v3.0.1/configuration.html)
+See [Yorc Server configuration](https://yorc.readthedocs.io/en/v3.1.1/configuration.html)
 documentation for details on how to configure the Yorc server using these three different methods.
 
 This section will show the use of a configuration file.
 Create a file $HOME/yorc/config.yorc.yaml (json is supported as well), configuring
-the Yorc server so that it can deploy applications on different infrastrucutures,
+the Yorc server so that it can deploy applications on different infrastructures,
 Google Cloud, OpenStack, AWS, Kubernetes, Slurm:
+
 ```yaml
 # Prefix on Compute Nodes that will be created on demand
 resources_prefix: yorc-
@@ -81,11 +87,11 @@ ansible:
     unsandboxed_operations_allowed: true
 ```
 
-All properties defined above are described in the  [Yorc Server configuration](https://yorc.readthedocs.io/en/v3.0.1/configuration.html) documentation.
+All properties defined above are described in the  [Yorc Server configuration](https://yorc.readthedocs.io/en/v3.1.1/configuration.html) documentation.
 
 Note that Infrastructure parameters above are provided in plain text, but it is possible
 to keep them secret by storing them in a vault.
-See Yorc documentation on Hashicorp vault [integration](https://yorc.readthedocs.io/en/v3.0.1/vault.html) and [configuration](https://yorc.readthedocs.io/en/v3.0.1/configuration.html#option-hashivault).
+See Yorc documentation on Hashicorp vault [integration](https://yorc.readthedocs.io/en/v3.1.1/vault.html) and [configuration](https://yorc.readthedocs.io/en/v3.1.1/configuration.html#option-hashivault).
 
 One type of infrastructure is not defined here, this is the Hosts Pool infrastructure.
 
@@ -97,6 +103,7 @@ Nodes can be declared in a file, that you can modify at any time to add new node
 to the Hosts Pool, modify nodes descriptions, or remove some nodes provided these nodes to remove are not allocated to a deployed application.
 
 Here is an example of a file declaring two hosts :
+
 ```yaml
 hosts:
 - name: host1
@@ -140,37 +147,42 @@ hosts:
 ```
 
 You can apply this definition, running this command:
+
 ```bash
-$ yorc hostspool apply mypooldefinition.yaml
+yorc hostspool apply mypooldefinition.yaml
 ```
 
 ## Start Yorc server
 
 Now that the configuration file `$HOME/yorc/config.yorc.yaml` was created, the Yorc server
-container can be started. This container expects to read its configuration from a 
-file under `/etc/yorc` within the container (or from environment variables or CLI flags as exeplained above).
+container can be started. This container expects to read its configuration from a
+file under `/etc/yorc` within the container (or from environment variables or CLI flags as explained above).
 
 So we will mount the host directory `$HOME/yorc` as `/etc/yorc` on the container.
-And use the image of Yorc 3.1.1 stored on docker hub at https://hub.docker.com/r/ystia/yorc/.
+And use the image of Yorc 3.1.1 stored on docker hub at <https://hub.docker.com/r/ystia/yorc/>.
 The port 8800 used by Yorc by default needs also to be exported.
 It gives this command to start Yorc:
+
 ```bash
-$ docker run -d \
+docker run -d \
   --mount "type=bind,src=/home/cloud-user/yorc,dst=/etc/yorc" \
   -p 8800:8800 --rm --name yorc --hostname yorc ystia/yorc:3.1.1
 ```
 
 You can then see and follow Yorc server logs running this command:
+
 ```bash
-$ docker logs --follow yorc
+docker logs --follow yorc
 ```
 
 You can enter the container running :
+
 ```bash
-$ docker exec -it yorc bash
+docker exec -it yorc bash
 ```
 
 Then start using yorc CLI :
+
 ```bash
 $ yorc help
 yorc is the main command, used to start the http server.
@@ -194,7 +206,7 @@ Flags:
 Use "yorc [command] --help" for more information about a command.
 ```
 
-See more details in the documentation on [Running Yorc in a docker container](https://yorc.readthedocs.io/en/v3.0.1/docker.html)
+See more details in the documentation on [Running Yorc in a docker container](https://yorc.readthedocs.io/en/v3.1.1/docker.html)
 
 Yorc is now installed.
 

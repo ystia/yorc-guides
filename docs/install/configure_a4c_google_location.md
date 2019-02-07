@@ -14,12 +14,13 @@ menu `On demand resources` like below :
 
 <img src="../images/a4cGoogleOnDemandResources.png">
 
-In this release, we support the following on-demand resources on Google :
-  * Compute Instances (Virtual Machines).
-  * Addresses.
-  * Persistent Disks.
-  * Private Networks.
-  * Sub-networks.
+In this release, we support the following on-demand resources on Google:
+
+* Compute Instances (Virtual Machines).
+* Addresses.
+* Persistent Disks.
+* Private Networks.
+* Sub-networks.
 
 ### Add a Google Compute instance on-demand resource
 
@@ -29,25 +30,27 @@ and drop this component to the left hand side cell, to get this :
 
 <img src="../images/a4cGoogleComputNewResource.png">
 
-In this page, you will specify which type of Compute Instance will be created, 
-to define which Operating System will be installed, how many CPUs, how much memory 
+In this page, you will specify which type of Compute Instance will be created,
+to define which Operating System will be installed, how many CPUs, how much memory
 must be allocated,etc...
-Credentials will have also to be defined, so that Yorc can ssh on the created 
+Credentials will have also to be defined, so that Yorc can ssh on the created
 on-demand compute instance.
 
-You could generate ssh private/public keys on Yorc host running this command 
+You could generate ssh private/public keys on Yorc host running this command
 (to keep the configuration simple, we don't specify any passphrase here):
+
 ```bash
-$ ssh-keygen -t ed25519 -f /etc/yorc/yorckey
+ssh-keygen -t ed25519 -f /etc/yorc/yorckey
 ```
+
 This will generate a private key file `/etc/yorc/yorckey`and a public key file `/etc/yorc/yorckey.pub`.
-The algorithm 
 
 Ensure these files are owned by the user use to run the yorc server.
 Make sure as well that these files are read-only for this user, and have no other
-permissions set, for example run :
+permissions set, for example run:
+
 ```bash
-$ chmod 400 /etc/yorc/yorckey*
+chmod 400 /etc/yorc/yorckey*
 ```
 
 Now that you have ssh keys generated, go back to AlienCloud UI to provide input 
@@ -56,19 +59,22 @@ values for our new Compute Resource :
 <img src="../images/a4cGoogleComputNewResource.png">
 
 Here we will specify to create a `centos-7` compute instance of type `n1-standard-1`,
-which from [Google Cloud documentation](https://cloud.google.com/compute/docs/machine-types) 
+which from [Google Cloud documentation](https://cloud.google.com/compute/docs/machine-types)
 is a machine of 1vCPU and 3.75 GB, by setting these properties:
-  * `image_project`: centos-cloud
-  * `image_family`: centos-7
-  * `machine_type`: n1-standard-1
-  * `zone`: europe-west1-b
+
+* `image_project`: centos-cloud
+* `image_family`: centos-7
+* `machine_type`: n1-standard-1
+* `zone`: europe-west1-b
 
 The `metadata` property allows to define a user and its public key content that will 
 be configured on the newly created instance.
 The expected format for this is :
+
 ```
 ssh-keys=<user to create>:<content of the public key>
 ```
+
 So we will specify to create a user called `yorcuser` on the instance to
 create, and we will provide the content of file `/etc/yorc/yorckey.pub` created
 above.
@@ -99,13 +105,13 @@ Let's define the number of CPUs and memory corresponding to Google Machine machi
 
 And let's define another on-demand resource to be able to create a compute instance
 with more resources when needed.
-For this, select `Back to Catalog ` :
+For this, select `Back to Catalog`:
 
 <img src="../images/a4cBackToCatalog.png">
 
 And drag and drop again the `yorc.nodes.google.Compute` component from right hand
 side cell to left hand side cell,
-then assign properties specifying this time a `machine_type` proerty value `n1-standard-4` 
+then assign properties specifying this time a `machine_type` property value `n1-standard-4`
 (4 vCPUs and 15 GB) that will be called `Large compute`:
 
 <img src="../images/a4cGoogleLargeCompute.png">
@@ -125,7 +131,6 @@ This node type inherits from `tosca.nodes.Network` and allows to substitute gene
 If you want to use any existing Google Static IP Addresses, you need to set the `addresses` parameter. It accepts a comma-separated list of addresses IPs.
 
 For details on other optional Address properties, see [Address Creation](https://cloud.google.com/sdk/gcloud/reference/compute/addresses/create).
-
 
 ### Add a Google Persistent Disk on-demand resource
 
@@ -163,17 +168,18 @@ If you want to use an existing network, set the parameter `network_name`. Otherw
 You can create custom or default subnet for new or existing network too as long as there is no CIDR range overlaps.
 
 For private network creation, You can specify subnets in three different ways:
-  * by checking the checkbox `auto_create_subnetworks` : Google will create a subnet for each region automatically with predefined IP ranges.
-  * by setting `cidr` and `cidr_region` : a default subnet will be created with the specified IP CIDR range in the Google specified region.
-  * by adding custom subnets : you can add several subnets with more accurate properties as described below.
 
-  You can as well use the auto-create mode and adding default and/or custom subnets as long as there is no CIDR range overlaps.
+* by checking the checkbox `auto_create_subnetworks` : Google will create a subnet for each region automatically with predefined IP ranges.
+* by setting `cidr` and `cidr_region` : a default subnet will be created with the specified IP CIDR range in the Google specified region.
+* by adding custom subnets : you can add several subnets with more accurate properties as described below.
 
-  Click on the `custom_subnetworks` edit icon to create several custom subnets:
+You can as well use the auto-create mode and adding default and/or custom subnets as long as there is no CIDR range overlaps.
 
-  <img src="../images/a4cGooglePrivateNetworkSubnet.png">
+Click on the `custom_subnetworks` edit icon to create several custom subnets:
 
-  Set the mandatory parameters `name`, `ip_cidr_range` and `region` respectively to define the name of your custom subnet, its IP CIDR range and the Google region it owns. Note that subnet names must be unique in the Google project they owns.
+<img src="../images/a4cGooglePrivateNetworkSubnet.png">
+
+Set the mandatory parameters `name`, `ip_cidr_range` and `region` respectively to define the name of your custom subnet, its IP CIDR range and the Google region it owns. Note that subnet names must be unique in the Google project they owns.
 
 You can configure secondary IP ranges for VM instances contained in this sub-network with `secondary_ip_ranges` list.
 
@@ -185,12 +191,12 @@ For details on other optional Private Network properties, see [VPC Creation](htt
 
 Here are some answers to frequently asked questions...
 
-- `How-to connect a VM to a private subnet after creating the relationship between the VM and a PrivateNetwork ?`
+* `How-to connect a VM to a private subnet after creating the relationship between the VM and a PrivateNetwork ?`
 
   * Explicitly by setting the subnet property of the Google network relationship `yorc.relationships.google.Network` with the required subnet name.
   * Implicitly with the default subnet if exists and in the same region than the VM or otherwise with the first matching subnet in the same region than the VM.
 
-- `Are any firewall rules created for my private network ?`
+* `Are any firewall rules created for my private network ?`
 
   Yes, the following default firewall rules are automatically created for each subnet:
 

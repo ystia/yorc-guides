@@ -4,12 +4,13 @@ To be able to deploy applications from Alien4Cloud, you will need to configure l
 infrastructures where Yorc will allocate resources and deploy the Applications.
 
 Yorc supports the following locations :
-  * Google Compute Engine,
-  * AWS EC2,
-  * OpenStack
-  * Kubernetes
-  * Slurm,
-  * Hosts Pool, pool of any kind of host to which you can connect through ssh
+
+* Google Compute Engine,
+* AWS EC2,
+* OpenStack
+* Kubernetes
+* Slurm,
+* Hosts Pool, pool of any kind of host to which you can connect through ssh
 
 The following sections will describe in details how to configure a Google Compute
 Engine location from Alien4Cloud UI, and a Hosts Pool.
