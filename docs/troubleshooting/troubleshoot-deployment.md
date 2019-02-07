@@ -3,7 +3,7 @@
 To create an application failing on demand, you can upload in Alien4Cloud
 a test component, importing in Alien4Cloud from menus `Catalog` > `Manage Archives` > `Git import` this repository :
   * `Repository URL`: https://github.com/ystia/yorc-a4c-plugin.git
-  * `Tag`: v3.1.0
+  * `Tag`: v3.1.1
   * `Archive`: tosca-samples/org/ystia/yorc/samples/tests/errors
   
 like this :
