@@ -2,46 +2,35 @@
 
 To configure Alien4Cloud to use Yorc, you need to:
 
-* upload the Yorc Alien4Cloud plugin in Alien4Cloud,
 * create, configure, enable the orchestrator in Alien4Cloud.
-
-First download the Yorc Alien4Cloud plugin 3.1.1 from its Bintray repository at <https://bintray.com/ystia/yorc-a4c-plugin/distributions/3.1.1>
-
-Then upload it from Alien4Cloud UI, from menus `Administration` > `Plugins` :
-
-<img src="../images/a4cUploadPlugin.png">
-
-Once done you can see at the end of this page a new plugin :
-
-<img src="../images/a4cPluginUploaded.png">
 
 To create a new orchestrator, select now menus `Administration` > `Orchestrators` to get this page :
 
-<img src="../images/a4cNewOrchestrator.png">
+![A4C New Yorc Orchestrator](../images/a4cNewOrchestrator.png)
 
 Click on `New Orchestrator`, enter `Yorc` as the orchestrator name, and select the Yorc plugin like below :
 
-<img src="../images/a4cCreateOrchestrator.png">
+![A4C Create New Yorc Orchestrator](../images/a4cCreateOrchestrator.png)
 
 Click on `Create`, a new Orchestrator is created :
 
-<img src="../images/a4cOrchestratorCreated.png">
+![A4C New Yorc Orchestrator Created](../images/a4cOrchestratorCreated.png)
 
 Select this orchestrator, a page appears showing the Orchestrator is in state `Disabled` for now.
 Select menu `Configuration` on the left hand side, a page appears where you can
 provide the URL to connect to your Yorc Server :
 
-<img src="../images/a4cYorcConfigure.png">
+![A4C Configure Yorc Orchestrator](../images/a4cYorcConfigure.png)
 
 In the field `urlYorc`, enter a URL like `http://<your host IP address>:8800`.
 Once done, select the menu `Information` on the left hand side to get this page :
 
-<img src="../images/a4cYorcInfo.png">
+![A4C Yorc Orchestrator Info](../images/a4cYorcInfo.png)
 
 Click on `Enable`. Alien4Cloud will attempt to connect to Yorc and if everything
 goes well, the Orchestrator should then appear as `Connected` :
 
-<img src="../images/a4cYorcConnected.png">
+![A4C New Yorc Orchestrator Connected](../images/a4cYorcConnected.png)
 
 Alien4Cloud is now configured to use your Yorc Server.
 

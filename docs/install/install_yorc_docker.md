@@ -34,7 +34,7 @@ It can be done through different ways, that you can combine:
 Command line flags take precedence over environment variables, which take precedence
 over values defined in the configuration file.
 
-See [Yorc Server configuration](https://yorc.readthedocs.io/en/v3.1.1/configuration.html)
+See [Yorc Server configuration](https://yorc.readthedocs.io/en/v4.0.0/configuration.html)
 documentation for details on how to configure the Yorc server using these three different methods.
 
 This section will show the use of a configuration file.
@@ -45,37 +45,6 @@ Google Cloud, OpenStack, AWS, Kubernetes, Slurm:
 ```yaml
 # Prefix on Compute Nodes that will be created on demand
 resources_prefix: yorc-
-infrastructures:
-  # Google Cloud configuration
-  google:
-    application_credentials: /etc/yorc/gcloud/my-project-service-account.json
-    project: my-project
-  # OpenStack Infrastructure settings
-  openstack:
-    auth_url: http://10.1.2.3:5000/v2.0
-    tenant_name: mytenant
-    user_name: myuser
-    password: mypasswd
-    region: RegionOne
-    private_network_name: private-net
-    default_security_groups: [secgroup1,secgroup2]
-  # AWS Infrastructure
-  aws:
-    region: us-east-2
-    access_key: ABCDEFABCEDFABCEDFAB
-    secret_key: lkipwrbmh+NDcoIVPChYgOcC/a8FfXPwhGZNOGWT
-  # Kubernetes Infrastructure settings
-  kubernetes:
-    ca_file: /etc/yorc/kubernetes/ca.pem,
-    cert_file: /etc/yorc/kubernetes/client.crt
-    key_file: /etc/yorc/kubernetes/client.key
-    master_url: https://10.1.2.40:6443
-  # Slurm Infrastructure setting
-  slurm:
-    user_name: root
-    private_key: /etc/yorc/slurm_private_key
-    url: 10.1.2.30
-    port: 22
 # Ansible configuration
 # Here using ssh instead of default paramiko for better performances
 ansible:
@@ -85,13 +54,68 @@ ansible:
   keep_generated_recipes: true
   hosted_operations:
     unsandboxed_operations_allowed: true
+# Path to a file describing locations that Yorc should connects to.
+locations_file_path: /etc/yorc/locations.yaml
 ```
 
-All properties defined above are described in the  [Yorc Server configuration](https://yorc.readthedocs.io/en/v3.1.1/configuration.html) documentation.
+All properties defined above are described in the  [Yorc Server configuration](https://yorc.readthedocs.io/en/v4.0.0/configuration.html) documentation.
 
-Note that Infrastructure parameters above are provided in plain text, but it is possible
+As you can see the supported locations are configured in a separate file. This file is read once during the initial
+cluster startup then it is ignored. This allows to have the same configuration for locations on all Yorc instances of
+the cluster.
+Locations can then be created/read/updated/deleted at runtime using the [REST API](https://github.com/ystia/yorc/blob/v4.0.0/rest/http_api.md#locations) or the [CLI](https://yorc.readthedocs.io/en/v4.0.0/cli.html#cli-commands-related-to-locations).
+
+Locations are identified by their names that should be unique and several locations of the same type are supported.
+
+Create a a location file $HOME/yorc/locations.yaml:
+
+```yaml
+locations:
+  # Google Cloud configuration
+  - name: Google1
+    type: google
+    properties:
+      application_credentials: /etc/yorc/gcloud/my-project-service-account.json
+      project: my-project
+  # OpenStack Infrastructure settings
+  - name: OpenStackMyTenant
+    type: openstack
+    properties:
+      auth_url: http://10.1.2.3:5000/v2.0
+      tenant_name: mytenant
+      user_name: myuser
+      password: mypasswd
+      region: RegionOne
+      private_network_name: private-net
+      default_security_groups: [secgroup1,secgroup2]
+  # AWS Infrastructure
+  - name: aws
+    type: aws
+    properties:
+      region: us-east-2
+      access_key: ABCDEFABCEDFABCEDFAB
+      secret_key: lkipwrbmh+NDcoIVPChYgOcC/a8FfXPwhGZNOGWT
+  # Kubernetes Infrastructure settings
+  - name: kubernetes
+    type: kubernetes
+    properties:
+      ca_file: /etc/yorc/kubernetes/ca.pem,
+      cert_file: /etc/yorc/kubernetes/client.crt
+      key_file: /etc/yorc/kubernetes/client.key
+      master_url: https://10.1.2.40:6443
+  # Slurm Infrastructure setting
+  - name: slurm
+    type: slurm
+    properties:
+      user_name: root
+      private_key: /etc/yorc/slurm_private_key
+      url: 10.1.2.30
+      port: 22
+```
+
+Note that locations properties above are provided in plain text, but it is possible
 to keep them secret by storing them in a vault.
-See Yorc documentation on Hashicorp vault [integration](https://yorc.readthedocs.io/en/v3.1.1/vault.html) and [configuration](https://yorc.readthedocs.io/en/v3.1.1/configuration.html#option-hashivault).
+See Yorc documentation on Hashicorp vault [integration](https://yorc.readthedocs.io/en/v4.0.0/vault.html) and [configuration](https://yorc.readthedocs.io/en/v4.0.0/configuration.html#option-hashivault).
 
 One type of infrastructure is not defined here, this is the Hosts Pool infrastructure.
 
@@ -149,8 +173,10 @@ hosts:
 You can apply this definition, running this command:
 
 ```bash
-yorc hostspool apply mypooldefinition.yaml
+yorc hostspool apply -l hostspool mypooldefinition.yaml
 ```
+
+Starting with Yorc 4.0.0 HostsPool can be describe in the location file like any other location.
 
 ## Start Yorc server
 
@@ -159,14 +185,14 @@ container can be started. This container expects to read its configuration from 
 file under `/etc/yorc` within the container (or from environment variables or CLI flags as explained above).
 
 So we will mount the host directory `$HOME/yorc` as `/etc/yorc` on the container.
-And use the image of Yorc 3.1.1 stored on docker hub at <https://hub.docker.com/r/ystia/yorc/>.
+And use the image of Yorc 4.0.0 stored on docker hub at <https://hub.docker.com/r/ystia/yorc/>.
 The port 8800 used by Yorc by default needs also to be exported.
 It gives this command to start Yorc:
 
 ```bash
 docker run -d \
   --mount "type=bind,src=/home/cloud-user/yorc,dst=/etc/yorc" \
-  -p 8800:8800 --rm --name yorc --hostname yorc ystia/yorc:3.1.1
+  -p 8800:8800 --rm --name yorc --hostname yorc ystia/yorc:4.0.0
 ```
 
 You can then see and follow Yorc server logs running this command:
@@ -186,7 +212,7 @@ Then start using yorc CLI :
 ```bash
 $ yorc help
 yorc is the main command, used to start the http server.
-Yorc is a new generation orchestrator.  
+Yorc is a new generation orchestrator.
 It is cloud-agnostic, flexible and secure.
 
 Usage:
@@ -206,7 +232,7 @@ Flags:
 Use "yorc [command] --help" for more information about a command.
 ```
 
-See more details in the documentation on [Running Yorc in a docker container](https://yorc.readthedocs.io/en/v3.1.1/docker.html)
+See more details in the documentation on [Running Yorc in a docker container](https://yorc.readthedocs.io/en/v4.0.0/docker.html)
 
 Yorc is now installed.
 
