@@ -1,18 +1,20 @@
+# Configure a Google Cloud location
+
 From Alien4Cloud UI, select menus `Administration` > `Orchestrators`, then select
 the orchestrator `Yorc`.
 A page appears where you can select `Location(s)` on the left hand side :
 
-<img src="../images/a4cYorcLocations.png">
+![A4C Yorc Locations](../images/a4cYorcLocations.png)
 
-Click on `New Location`. Enter a name: `Google`. Select the Infrastructure type 
+Click on `New Location`. Enter a name: `Google`. Select the Infrastructure type
 `Google Cloud`:
 
-<img src="../images/a4cNewGoogleLocation.png">
+![A4C Yorc New Google Location](../images/a4cNewGoogleLocation.png)
 
 Click on `Create`. A page appears allowing to configure this location, select the
 menu `On demand resources` like below :
 
-<img src="../images/a4cGoogleOnDemandResources.png">
+![A4C Yorc Google Location On Demand Resources](../images/a4cGoogleOnDemandResources.png)
 
 In this release, we support the following on-demand resources on Google:
 
@@ -22,13 +24,13 @@ In this release, we support the following on-demand resources on Google:
 * Private Networks.
 * Sub-networks.
 
-### Add a Google Compute instance on-demand resource
+## Add a Google Compute instance on-demand resource
 
 To add an on-demand Compute Node, drag the `yorc.nodes.google.Compute` component
 on the right hand side cell,
 and drop this component to the left hand side cell, to get this :
 
-<img src="../images/a4cGoogleComputNewResource.png">
+![A4C Yorc Google Location New Compute Resource](../images/a4cGoogleComputNewResource.png)
 
 In this page, you will specify which type of Compute Instance will be created,
 to define which Operating System will be installed, how many CPUs, how much memory
@@ -53,10 +55,10 @@ permissions set, for example run:
 chmod 400 /etc/yorc/yorckey*
 ```
 
-Now that you have ssh keys generated, go back to AlienCloud UI to provide input 
+Now that you have ssh keys generated, go back to AlienCloud UI to provide input
 values for our new Compute Resource :
 
-<img src="../images/a4cGoogleComputNewResource.png">
+![A4C Yorc Google Location New Compute Resource](../images/a4cGoogleComputNewResource.png)
 
 Here we will specify to create a `centos-7` compute instance of type `n1-standard-1`,
 which from [Google Cloud documentation](https://cloud.google.com/compute/docs/machine-types)
@@ -67,7 +69,7 @@ is a machine of 1vCPU and 3.75 GB, by setting these properties:
 * `machine_type`: n1-standard-1
 * `zone`: europe-west1-b
 
-The `metadata` property allows to define a user and its public key content that will 
+The `metadata` property allows to define a user and its public key content that will
 be configured on the newly created instance.
 The expected format for this is :
 
@@ -82,49 +84,49 @@ above.
 Below in the page, you need also to configure credentials. This is a mandatory input
 appearing in red when not yet provided :
 
-<img src="../images/a4CGoogleComputeCredsMissing.png">
+![A4C Yorc Google Location New Compute Resource Credentials](../images/a4CGoogleComputeCredsMissing.png)
 
 Edit `credentials` to define the user :
 
-<img src="../images/a4CGoogleComputCredsUser.png">
+![A4C Yorc Google Location New Compute Resource Credentials User](../images/a4CGoogleComputCredsUser.png)
 
 Edit `keys` to add a key `0` with a value being the path to a private key:
 
-<img src="../images/a4cGoogleComputeKey.png">
+![A4C Yorc Google Location New Compute Resource Credentials Key](../images/a4cGoogleComputeKey.png)
 
 You can also here define hardware or OS settings like the number of CPUs or memory size,
 so that when resources allocations requirements are specified in a an application
 template to deploy, an on-demand resource matching this criteria will be selected :
 
-<img src="../images/a4cGoogleComputehostResource.png">
+![A4C Yorc Google Location New Compute Resource Host Capability](../images/a4cGoogleComputehostResource.png)
 
 Let's define the number of CPUs and memory corresponding to Google Machine machine
  type `n1-standard`, and rename our on-demand resource `New Resource` as `Small compute`:
 
-<img src="../images/a4cGoogleSmallCompute.png">
+![A4C Yorc Google Location New Compute Resource](../images/a4cGoogleSmallCompute.png)
 
 And let's define another on-demand resource to be able to create a compute instance
 with more resources when needed.
 For this, select `Back to Catalog`:
 
-<img src="../images/a4cBackToCatalog.png">
+![A4C Yorc Google Location New Compute Resource](../images/a4cBackToCatalog.png)
 
 And drag and drop again the `yorc.nodes.google.Compute` component from right hand
 side cell to left hand side cell,
 then assign properties specifying this time a `machine_type` property value `n1-standard-4`
 (4 vCPUs and 15 GB) that will be called `Large compute`:
 
-<img src="../images/a4cGoogleLargeCompute.png">
+![A4C Yorc Google Location New Compute Resource](../images/a4cGoogleLargeCompute.png)
 
 Compute instance On-demand resource is now configured on this location.
 
-### Add a Google Static IP Address on-demand resource
+## Add a Google Static IP Address on-demand resource
 
 To add an on-demand Static IP address, drag the `yorc.nodes.google.PublicNetwork` component
 on the right hand side cell,
 and drop this component to the left hand side cell, to get this :
 
-<img src="../images/a4cGooglePublicNetworkNewResource.png">
+![A4C Yorc Google Location New Compute Resource Network](../images/a4cGooglePublicNetworkNewResource.png)
 
 This node type inherits from `tosca.nodes.Network` and allows to substitute generic Network type. At post-matching step, this node will be replaced by `yorc.nodes.google.Address`. You can directly use this node type if you need to define specific Google Address properties.
 
@@ -132,13 +134,13 @@ If you want to use any existing Google Static IP Addresses, you need to set the 
 
 For details on other optional Address properties, see [Address Creation](https://cloud.google.com/sdk/gcloud/reference/compute/addresses/create).
 
-### Add a Google Persistent Disk on-demand resource
+## Add a Google Persistent Disk on-demand resource
 
 To add an on-demand Persistent Disk Node, drag the `yorc.nodes.google.PersistentDisk` component
 on the right hand side cell,
 and drop this component to the left hand side cell, to get this :
 
-<img src="../images/a4cGooglePersistentDiskNewResource.png">
+![A4C Yorc Google Location New Compute Resource Persistent Disk](../images/a4cGooglePersistentDiskNewResource.png)
 
 Set the mandatory parameter `zone` to define the zone on which the disk resides.
 In any case the disk must be on the same zone as the associated Compute instances.
@@ -155,13 +157,13 @@ If you want to attach the disk to a compute with a `READ_ONLY` mode, you need to
 
 For details on other optional PersistentDisk properties, see [Persistent Disk Creation](https://cloud.google.com/sdk/gcloud/reference/compute/disks/create).
 
-### Add a Google Private Network on-demand resource
+## Add a Google Private Network on-demand resource
 
 To add an on-demand Private Network Node, drag the `yorc.nodes.google.PrivateNetwork` component
 on the right hand side cell,
 and drop this component to the left hand side cell, to get this :
 
-<img src="../images/a4cGooglePrivateNetworkNewResource.png">
+![A4C Yorc Google Location New Compute Resource Private Network](../images/a4cGooglePrivateNetworkNewResource.png)
 
 If you want to use an existing network, set the parameter `network_name`. Otherwise, let it blank.
 
@@ -177,7 +179,7 @@ You can as well use the auto-create mode and adding default and/or custom subnet
 
 Click on the `custom_subnetworks` edit icon to create several custom subnets:
 
-<img src="../images/a4cGooglePrivateNetworkSubnet.png">
+![A4C Yorc Google Location New Compute Resource Private Network Subnet](../images/a4cGooglePrivateNetworkSubnet.png)
 
 Set the mandatory parameters `name`, `ip_cidr_range` and `region` respectively to define the name of your custom subnet, its IP CIDR range and the Google region it owns. Note that subnet names must be unique in the Google project they owns.
 
@@ -201,4 +203,4 @@ Here are some answers to frequently asked questions...
   Yes, the following default firewall rules are automatically created for each subnet:
 
   * Ingress rules from any incoming source for ICMP protocol and RDP and SSH ports (TCP 3389 and TCP 22)
-  * Ingress rules from any incoming subnet source for ICMP, TCP and UDP protocol on all port ranges (0-65535).  
+  * Ingress rules from any incoming subnet source for ICMP, TCP and UDP protocol on all port ranges (0-65535).
