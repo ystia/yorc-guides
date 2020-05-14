@@ -5,7 +5,7 @@ It provides a catalog of components and application templates and can rely on Yo
 Starting with Alien4Cloud 2.2.0 Yorc is the default orchestrator in Alien4Cloud and an A4C plugin dedicated to Yorc
 is shipped by default within Aline4Cloud.
 
-First you need to install Alien4Cloud. Yorc 4.0.0 requires Alien4Cloud 2.2.0.
+First you need to install Alien4Cloud. Yorc 4.0.x requires Alien4Cloud 2.2.0.
 You can either install manually Alien4Cloud dependencies, curl and java 8, as described
 in [Alien4Cloud 2.2.0 Getting Started guide](https://alien4cloud.github.io/#/documentation/2.2.0/getting_started/new_getting_started.html),
 or use the docker image `alien4cloud/alien4cloud:2.2.0` available on [Docker Hub](https://hub.docker.com/r/alien4cloud/alien4cloud/).
