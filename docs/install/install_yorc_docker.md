@@ -34,7 +34,7 @@ It can be done through different ways, that you can combine:
 Command line flags take precedence over environment variables, which take precedence
 over values defined in the configuration file.
 
-See [Yorc Server configuration](https://yorc.readthedocs.io/en/v4.0.6/configuration.html)
+See [Yorc Server configuration](https://yorc.readthedocs.io/en/v4.1.1/configuration.html)
 documentation for details on how to configure the Yorc server using these three different methods.
 
 This section will show the use of a configuration file.
@@ -58,12 +58,12 @@ ansible:
 locations_file_path: /etc/yorc/locations.yaml
 ```
 
-All properties defined above are described in the  [Yorc Server configuration](https://yorc.readthedocs.io/en/v4.0.6/configuration.html) documentation.
+All properties defined above are described in the  [Yorc Server configuration](https://yorc.readthedocs.io/en/v4.1.1/configuration.html) documentation.
 
 As you can see the supported locations are configured in a separate file. This file is read once during the initial
 cluster startup then it is ignored. This allows to have the same configuration for locations on all Yorc instances of
 the cluster.
-Locations can then be created/read/updated/deleted at runtime using the [REST API](https://github.com/ystia/yorc/blob/v4.0.6/rest/http_api.md#locations) or the [CLI](https://yorc.readthedocs.io/en/v4.0.6/cli.html#cli-commands-related-to-locations).
+Locations can then be created/read/updated/deleted at runtime using the [REST API](https://github.com/ystia/yorc/blob/v4.1.1/rest/http_api.md#locations) or the [CLI](https://yorc.readthedocs.io/en/v4.1.1/cli.html#cli-commands-related-to-locations).
 
 Locations are identified by their names that should be unique and several locations of the same type are supported.
 
@@ -115,7 +115,7 @@ locations:
 
 Note that locations properties above are provided in plain text, but it is possible
 to keep them secret by storing them in a vault.
-See Yorc documentation on Hashicorp vault [integration](https://yorc.readthedocs.io/en/v4.0.6/vault.html) and [configuration](https://yorc.readthedocs.io/en/v4.0.6/configuration.html#option-hashivault).
+See Yorc documentation on Hashicorp vault [integration](https://yorc.readthedocs.io/en/v4.1.1/vault.html) and [configuration](https://yorc.readthedocs.io/en/v4.1.1/configuration.html#option-hashivault).
 
 One type of infrastructure is not defined here, this is the Hosts Pool infrastructure.
 
@@ -185,14 +185,14 @@ container can be started. This container expects to read its configuration from 
 file under `/etc/yorc` within the container (or from environment variables or CLI flags as explained above).
 
 So we will mount the host directory `$HOME/yorc` as `/etc/yorc` on the container.
-And use the image of Yorc 4.0.6 stored on docker hub at <https://hub.docker.com/r/ystia/yorc/>.
+And use the image of Yorc 4.1.1 stored on docker hub at <https://hub.docker.com/r/ystia/yorc/>.
 The port 8800 used by Yorc by default needs also to be exported.
 It gives this command to start Yorc:
 
 ```bash
 docker run -d \
   --mount "type=bind,src=/home/cloud-user/yorc,dst=/etc/yorc" \
-  -p 8800:8800 --rm --name yorc --hostname yorc ystia/yorc:4.0.6
+  -p 8800:8800 --rm --name yorc --hostname yorc ystia/yorc:4.1.1
 ```
 
 You can then see and follow Yorc server logs running this command:
@@ -232,7 +232,7 @@ Flags:
 Use "yorc [command] --help" for more information about a command.
 ```
 
-See more details in the documentation on [Running Yorc in a docker container](https://yorc.readthedocs.io/en/v4.0.6/docker.html)
+See more details in the documentation on [Running Yorc in a docker container](https://yorc.readthedocs.io/en/v4.1.1/docker.html)
 
 Yorc is now installed.
 

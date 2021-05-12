@@ -14,7 +14,7 @@ Yorc supports the following locations :
 
 The following sections will describe in details how to configure a Google Compute
 Engine location from Alien4Cloud UI, and a Hosts Pool.
-For the other locations, see Yorc Alien4Cloud plugin documentation section [Configure a Yorc Orchestrator and a Location](https://yorc-a4c-plugin.readthedocs.io/en/v4.0.6/location.html).
+For the other locations, see Yorc Alien4Cloud plugin documentation section [Configure a Yorc Orchestrator and a Location](https://yorc-a4c-plugin.readthedocs.io/en/v4.1.1/location.html).
 
 [Configuring a Google Compute Engine location](configure_a4c_google_location.md)
 

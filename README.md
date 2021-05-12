@@ -1,6 +1,6 @@
 # Ystia Orchestrator guides
 
-This repository provides guidance on how to install, use and troubleshoot the Ystia Orchestrator (Yorc) latest release 4.0.6.
+This repository provides guidance on how to install, use and troubleshoot the Ystia Orchestrator (Yorc) latest release 4.1.1.
 
 ## Overview
 
@@ -17,8 +17,8 @@ components and relationships, portable across infrastructures.
 
 The Orchestrator has companions products :
 
-* the [Ystia Forge](https://github.com/ystia/forge/tree/v2.2.0/org/ystia), repository of components and application templates
-* A UI/Studio [Alien4Cloud](https://github.com/alien4cloud/alien4cloud/tree/2.2.0), that can use Yorc to deploy these application templates.
+* the [Ystia Forge](https://github.com/ystia/forge/tree/v3.0.0-milestone.1/org/ystia), repository of components and application templates
+* A UI/Studio [Alien4Cloud](https://github.com/alien4cloud/alien4cloud/tree/3.2.0), that can use Yorc to deploy these application templates.
 
 Yorc is one binary used for both the CLI and the Yorc server exposing a REST API.
 
