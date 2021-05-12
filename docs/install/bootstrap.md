@@ -20,4 +20,4 @@ on which Yorc should be setup. Supported environment are for now:
 Then Yorc will automatically download all required components, and run a deployment on the target infrastructure.
 This could be used to quickly deploy a development environment or a fully HA and secured setup.
 
-For more information on this feature please read the [bootstrap documentation](https://yorc.readthedocs.io/en/v4.0.3/bootstrap.html).
+For more information on this feature please read the [bootstrap documentation](https://yorc.readthedocs.io/en/v4.0.6/bootstrap.html).
